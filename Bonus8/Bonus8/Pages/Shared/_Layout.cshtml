@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>McDrivin'</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    
+</head>
+<body>
+    <partial name="_CookieConsentPartial" />
+    <img src="~/images/ronald1.jpg" id="pic1" class="divpics">
+    <img src="~/images/ronald2.jpg" id="pic2" class="divpics">
+    <img src="~/images/ronald3.jpg" id="pic3" class="divpics">
+    <img src="~/images/ronald4.jpg" id="pic4" class="divpics">
+    <img src="~/images/ronald5.jpg" id="pic5" class="divpics">
+    @*<div id="pic2" class="divpics" style="background: url(../wwwroot/images/ronald2.jpg)"></div>
+        <div id="pic3" class="divpics" style="background: url(../wwwroot/images/ronald3.jpg)"></div>
+        <div id="pic4" class="divpics" style="background: url(../wwwroot/images/ronald4.jpg)"></div>
+        <div id="pic5" class="divpics" style="background: url(../wwwroot/images/ronald5.jpg)"></div>*@
+
+    <div id="bg">
+        <div class="container body-content">
+
+            @RenderBody()
+
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false);
+    <script>
+        $('#pic1').hide();
+        $('#pic2').hide();
+        $('#pic3').hide();
+        $('#pic4').hide();
+        $('#pic5').hide();
+        $("html").hide();
+
+
+        for (var i = 1; i < 10; i++) {
+            setTimeout(function () { $('#pic1').show(); }, 7000);
+            setTimeout(function () { $('#bg').hide(); }, 7000);
+            setTimeout(function () { $('#pic1').hide(); }, 7300);
+            setTimeout(function () { $('#bg').show(); }, 7300);
+            setTimeout(function () { $('#pic2').show(); }, 10000);
+            setTimeout(function () { $('#bg').hide(); }, 10000);
+            setTimeout(function () { $('#pic2').hide(); }, 10300);
+            setTimeout(function () { $('#bg').show(); }, 10300);
+            setTimeout(function () { $('#pic3').show(); }, 15000);
+            setTimeout(function () { $('#bg').hide(); }, 15000);
+            setTimeout(function () { $('#pic3').hide(); }, 15300);
+            setTimeout(function () { $('#bg').show(); }, 15300);
+            setTimeout(function () { $('#pic4').show(); }, 18000);
+            setTimeout(function () { $('#bg').hide(); }, 18000);
+            setTimeout(function () { $('#pic4').hide(); }, 18300);
+            setTimeout(function () { $('#bg').show(); }, 18300);
+            setTimeout(function () { $('#pic5').show(); }, 24000);
+            setTimeout(function () { $('#bg').hide(); }, 24000);
+            setTimeout(function () { $('#pic5').hide(); }, 24300);
+            setTimeout(function () { $('#bg').show(); }, 24300);
+            $("html").fadeIn(10000).fadeOut(500).fadeIn(4000).fadeOut(3000).fadeIn(300).fadeOut(3200).fadeIn(1400);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+<iframe src="~/lib/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
+<audio id="mcDrivin" autoplay loop>
+    <source src="~/lib/McDrivin.mp3" type="audio/mp3">
+</audio>
+<script>
+    window.onload = function () {
+        document.getElementById("mcDrivin").play();
+    }</script>
+<div class="centered-thing">
+    <video width="500" height="440" autoplay muted loop>
+        <source src="~/lib/McDrivin.mp4" type="video/mp4">
+        Your browser does not support the HTML5 Video element.
+    </video>
+</div>
